@@ -3,6 +3,7 @@ import {useAudioStore} from "~/store";
 import {useWavesurfer} from "@wavesurfer/react";
 import SpectrogramPlugin from "wavesurfer.js/plugins/spectrogram";
 import TimelinePlugin from "wavesurfer.js/plugins/timeline";
+import ZoomPlugin from "wavesurfer.js/plugins/zoom";
 
 export const useAudioTarget = () => {
 
@@ -17,8 +18,9 @@ export const useAudioTarget = () => {
         progressColor: '#282828',
         cursorColor: '#cc241d',
         cursorWidth: 2,
-        height: 100,
-        plugins: useMemo(() => [TimelinePlugin.create(),], [])
+        height: 300,
+        minPxPerSec: 10,
+        plugins: useMemo(() => [TimelinePlugin.create(), ZoomPlugin.create()], [])
 
     });
 

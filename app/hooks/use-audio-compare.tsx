@@ -3,6 +3,7 @@ import {useAudioStore} from "~/store";
 import {useWavesurfer} from "@wavesurfer/react";
 import TimelinePlugin from "wavesurfer.js/plugins/timeline";
 import SpectrogramPlugin from "wavesurfer.js/plugins/spectrogram";
+import ZoomPlugin from "wavesurfer.js/plugins/zoom";
 
 export const useAudioCompare = () => {
     const wavesurferCompareRef = useRef(null);
@@ -15,8 +16,9 @@ export const useAudioCompare = () => {
         progressColor: '#282828',
         cursorColor: '#282828',
         cursorWidth: 2,
-        height: 100,
-        plugins: useMemo(() => [TimelinePlugin.create(),], [])
+        height: 300,
+        minPxPerSec: 10,
+        plugins: useMemo(() => [TimelinePlugin.create(), ZoomPlugin.create()], [])
     });
 
     useEffect(() => {

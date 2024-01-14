@@ -19,8 +19,8 @@ const Icon = ({children, label, color, strokeWidth, fill, className, width, heig
             width={width || 24}
             height={height || 24}
             viewBox="0 0 24 24"
-            fill={fill || "#282828"}
-            stroke={color || "#282828"}
+            fill={fill || "#fff"}
+            stroke={color || "#fff"}
             strokeWidth={strokeWidth || 2}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -58,7 +58,16 @@ export const PauseIcon = memo(() => (
         <rect width="4" height="16" x="14" y="4"/>
     </Icon>
 ));
+
+export const AddAudioIcon = memo(() => (
+    <Icon label={"Add Audio"} fill={"none"}>
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/>
+        <line x1="12" x2="12" y1="3" y2="15"/>
+    </Icon>
+))
 RecordIcon.displayName = "RecordIcon";
 StopRecordIcon.displayName = "StopRecordIcon";
 PlayIcon.displayName = "PlayIcon";
 PauseIcon.displayName = "PauseIcon";
+AddAudioIcon.displayName = "AddAudioIcon";
