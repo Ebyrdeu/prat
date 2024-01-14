@@ -18,7 +18,7 @@ export const useAudioTarget = () => {
         progressColor: '#282828',
         cursorColor: '#cc241d',
         cursorWidth: 2,
-        height: 300,
+        height: 200,
         minPxPerSec: 10,
         plugins: useMemo(() => [TimelinePlugin.create(), ZoomPlugin.create()], [])
 

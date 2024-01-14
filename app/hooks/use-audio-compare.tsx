@@ -16,7 +16,7 @@ export const useAudioCompare = () => {
         progressColor: '#282828',
         cursorColor: '#282828',
         cursorWidth: 2,
-        height: 300,
+        height: 200,
         minPxPerSec: 10,
         plugins: useMemo(() => [TimelinePlugin.create(), ZoomPlugin.create()], [])
     });
